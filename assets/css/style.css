@@ -1,0 +1,40 @@
+body {
+    background-color: #662d91;
+}
+
+header {
+    text-align: center;
+    color: #662d91;
+    background-color: #FFF;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+
+.side-menu {
+    width: 30%;
+    height: 100%;
+    padding: 2%;
+    color: #662d91;
+    background-color: #FFF;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+
+.side-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.side-menu li a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #662d91;
+    color: #662d91;
+    text-decoration: none;
+}
+
+.side-menu li a:hover {
+    color: #FFF;
+    background-color: #662d91;
+}
