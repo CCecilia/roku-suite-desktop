@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Tool suite for Roku development.">
+        <meta name="author" content="Christian Cecilia">
+        <title>Roku Suite</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
+
+        <!-- JS -->
+        <script>window.$ = window.jQuery = require('jquery');</script>
+        <script src="../node_modules/popper.js/dist/js/popper.min.js" type="text/javascript"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../lib/frontEnd/addProjectWindow.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <header  class="card">
+            <h1>Add Project</h1>
+        </header>
+        <div class="main-wrapper">
+            <div id="add-project-wrap" class="card pad-top-4">
+                <div id="project-path-selection" class="text-centered">
+                    <label class="clickable label-btn" for="add-project">Choose Directory</label>
+                    <input type="file" id="add-project" class="hidden" multiple webkitdirectory>
+                </div>
+                <form name="add-project-form" class="hidden">
+                    <label for="">Path</label>
+                    <input type="text" name="project_path" required>
+
+                    <labe>Project Name</labe>
+                    <input type="text" name="project_name" required>
+
+                    <label class="clickable label-btn" for="exclude-files">Exclude Files</label>
+                    <input type="file" class="hidden" id="exclude-files" name="project_excluded_files" multiple requried="false">
+
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="button">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

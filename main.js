@@ -1,6 +1,9 @@
+const locals = {};
+const pug = require('electron-pug')({pretty: true}, locals);
 const url = require('url');
 const path = require('path');
 const {app, BrowserWindow, Menu, ipcMain} = require('electron');
+const projectController = require('./lib/controllers/projectController');
 
 let mainWindow;
 let mainMenuTemplate = [
@@ -23,12 +26,13 @@ let mainMenuTemplate = [
                 label: 'Add',
                 accelerator: process.platform == 'darwin' ? 'Command+A' : 'Ctrl+A',
                 click() {
-                    console.log('add project');
+                    projectController.createAddProjectWindow();
                 }
             }
         ]
     }
 ]
+
 // fix menu spacing on mac
 if( process.platform == 'darwin' ) {
     mainMenuTemplate.unshift({});
@@ -59,12 +63,12 @@ app.on('ready', () => {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
-        icon: `${__dirname}/public/brs_icon.ico`
+        icon: path.join(__dirname, 'public', 'brs_icon.ico')
     });
 
     // load html file into app
     mainWindow.loadURL(url.format({
-        pathname: `${__dirname}/views/mainWindow.html`,
+        pathname: path.join(__dirname, 'views', 'index.pug'),
         protocol: 'file:',
         slashes: true
     }));
