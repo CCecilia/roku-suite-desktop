@@ -1,0 +1,82 @@
+body {
+    background-color: #662d91;
+}
+
+#sidebar {
+    max-width: 250px;
+    background-color: #FFF;
+    height: 100vh;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 2% 0 0 0;
+    width: 100%;
+    color: #662d91;
+}
+
+.sidebar-brand {
+    font-size: 1.5vw;
+}
+
+.sidebar-nav {
+    border-bottom: 1px solid #662d91;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+    padding: 5%;
+}
+
+
+.sidebar-nav:hover {
+    background-color: #662d91;
+    color: #FFF;
+}
+
+.project-card {
+    margin: 2%;
+    background-color: #FFF;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+}
+
+.roku-dropdown {
+    background-color: #662d91;
+    width: 20%;
+}
+
+.roku-font {
+    color: #662d91;
+}
+
+.btn-roku {
+    background-color: #662d91;
+    color: #FFF;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.pad-2 {
+    padding: 2%
+}
+
+.pad-3 {
+    padding: 3%
+}
+
+.pad-4 {
+    padding: 3%
+}
+
+.pad-top-4 {
+    padding-top: 4%
+}
+
+.centered {
+    margin: 0 auto;
+}

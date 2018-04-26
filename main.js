@@ -1,4 +1,4 @@
-const locals = {};
+const locals = {test: 'chris'};
 const pug = require('electron-pug')({pretty: true}, locals);
 const url = require('url');
 const path = require('path');
@@ -68,7 +68,7 @@ app.on('ready', () => {
 
     // load html file into app
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'views', 'index.pug'),
+        pathname: path.join(__dirname, 'views', 'mainWindow.pug'),
         protocol: 'file:',
         slashes: true
     }));
