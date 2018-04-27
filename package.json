@@ -17,8 +17,9 @@
     "bootstrap": "^4.1.0",
     "electron": "^1.8.4",
     "electron-pug": "^1.5.1",
+    "git-branch": "^2.0.1",
     "jquery": "^3.3.1",
-    "node-persist": "^3.0.0",
+    "mongoose": "^5.0.16",
     "npm": "^6.0.0",
     "popper.js": "^1.14.3",
     "pug": "^2.0.3"

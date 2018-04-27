@@ -1,39 +1,28 @@
-doctype html
-head
-    meta(charset='UTF-8')
-    // CSS
-    link(rel='stylesheet', href='../node_modules/bootstrap/dist/css/bootstrap.min.css')
-    link(rel='stylesheet', href='../assets/css/stylesheet.css')
-body
-    .container-fluid
-        .row
-            #sidebar.col-3
-                ul.sidebar-menu.text-center
-                    li.sidebar-brand
-                        h2 Roku Suite
-                    li.sidebar-nav.clickable(data='projects') Projects
-                    li.sidebar-nav.clickable(data='tools') Tools
-                    li.sidebar-nav.clickable(data='refs') Refs
-            #main-content.col-9
-                #projects.row
-                    .col-4.project-card.clickable
-                        .row
-                            .col-12.text-center
-                                h4.roku-font Project name
-                                p.text-muted Git Branch
-                            .col-12.text-center
-                                .dropdown
-                                    button.btn.btn-roku.btn-block.dropdown-toggle(type='button', data-toggle='dropdown')
-                                        | Default Roku
-                                    .dropdown-menu
-                                        a.dropdown-item(href='#') Roku 1
-                                        a.dropdown-item(href='#') Roku 2
-                                        a.dropdown-item(href='#') roku 3
-                            .col-12.text-center.pad-4
-                                button.btn.btn-success.btn-block Deploy
-    // JS
-    script.
-        window.$ = window.jQuery = require('jquery');
-    script(src='../node_modules/popper.js/dist/js/popper.min.js', type='text/javascript')
-    script(src='../node_modules/bootstrap/dist/js/bootstrap.min.js', type='text/javascript')
-    script(src='../lib/frontEnd/addProjectWindow.js', type='text/javascript')
+extends layout
+
+block content
+    .row
+        #sidebar.col-3
+            ul.sidebar-menu.text-center
+                li.sidebar-brand
+                    h2 Roku Suite
+                li.sidebar-nav.clickable(data-target='projects') Projects
+                li.sidebar-nav.clickable(data-target='tools') Tools
+                li.sidebar-nav.clickable(data-target='refs') Refs
+        #main-content.col-9
+            #projects.row
+                .col-4.project-card.clickable
+                    .row
+                        .col-12.text-center
+                            h4.roku-font Project name
+                            p.text-muted Git Branch
+                        .col-12.text-center
+                            .dropdown
+                                button.btn.btn-roku.btn-block.dropdown-toggle(type='button', data-toggle='dropdown')
+                                    | Default Roku
+                                .dropdown-menu
+                                    a.dropdown-item(href='#') Roku 1
+                                    a.dropdown-item(href='#') Roku 2
+                                    a.dropdown-item(href='#') roku 3
+                        .col-12.text-center.pad-4
+                            button.btn.btn-success.btn-block Deploy

@@ -9,6 +9,28 @@ body {
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
 }
 
+#add-project-wrap {
+    width: 90%;
+    margin-top: 15%;
+    padding: 3%;
+    background-color: #FFF;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+}
+
+#add-project-wrap .form-group {
+    width: 100%;
+    text-align: center;
+}
+
+#excluded_file_paths {
+    list-style-type: none;
+    color: #662d91;
+}
+
+.roku-input {
+    border: 1px solid #662d91;
+    color: #662d91;
+}
 .sidebar-menu {
     list-style-type: none;
     margin: 0;
@@ -37,6 +59,11 @@ body {
     margin: 2%;
     background-color: #FFF;
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+}
+
+.card {
+    width: 75%;
+    background-color: #FFF;
 }
 
 .roku-dropdown {

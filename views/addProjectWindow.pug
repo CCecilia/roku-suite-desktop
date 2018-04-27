@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    #add-project-wrap.centered
+        .col-12
+            form(name='add-project-form')
+                .row
+                    .form-group
+                        label.clickable.btn.btn-roku.btn-block(for='add-project', autofocus) Choose Directory
+                        input#add-project.hidden(type='file', multiple='', webkitdirectory='')
+                .row
+                    .form-group
+                        label.roku-font(for='project_path') Path
+                        input#project_path.form-control.roku-input(type='text', required='true', title='Path to your project.')
+                .row
+                    .form-group
+                        label.roku-font(for='project_name') Project Name
+                        input#project_name.form-control.roku-input(type='text', required='true', title='Name of your project.')
+                .row
+                    .form-group
+                        ul#excluded_file_paths
+                        label.clickable.btn.btn-roku.btn-block(for='exclude-files') Exclude Files
+                        input#exclude-files.hidden(type='file', name='project_excluded_files', multiple='', requried='false', title='Any files you wish to exclude from bundling.')
+                .row
+                    button.btn.btn-roku.btn-block(type='submit') Save
+                    button.btn.btn-danger.btn-block(type='button') Cancel

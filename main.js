@@ -4,6 +4,7 @@ const url = require('url');
 const path = require('path');
 const {app, BrowserWindow, Menu, ipcMain} = require('electron');
 const projectController = require('./lib/controllers/projectController');
+const mongoose = require('mongoose');
 
 let mainWindow;
 let mainMenuTemplate = [
@@ -32,6 +33,13 @@ let mainMenuTemplate = [
         ]
     }
 ]
+
+// database setup
+const mongoDB = 'mongodb://localhost:27017/rokuSuite';
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // fix menu spacing on mac
 if( process.platform == 'darwin' ) {
@@ -81,4 +89,13 @@ app.on('ready', () => {
 
     // insert Menu
     Menu.setApplicationMenu(mainMenu);
+});
+
+// handle new project
+ipcMain.on('new_project', (e, new_project) => {
+    // save
+    projectController.saveNewProject(new_project);
+
+    // update main window
+    mainWindow.webContents.send('new_project', new_project);
 });
