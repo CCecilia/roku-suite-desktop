@@ -10,19 +10,16 @@ block content
                 li.sidebar-nav.clickable(data-target='tools') Tools
                 li.sidebar-nav.clickable(data-target='refs') Refs
         #main-content.col-9
+            #deploy-options.row
+                .col-6
+                    button.btn.btn-roku.btn-block
+                        | Scan
+                        |
+                        i.fa.fa-wifi
+                .col-6.text-center
+                    .dropdown
+                        button.btn.btn-roku.btn-block.dropdown-toggle(type='button', data-toggle='dropdown')
+                          | Select Roku
+                        .dropdown-menu
+                          a.dropdown-item(href='#') Cooper
             #projects.row
-                .col-4.project-card.clickable
-                    .row
-                        .col-12.text-center
-                            h4.roku-font Project name
-                            p.text-muted Git Branch
-                        .col-12.text-center
-                            .dropdown
-                                button.btn.btn-roku.btn-block.dropdown-toggle(type='button', data-toggle='dropdown')
-                                    | Default Roku
-                                .dropdown-menu
-                                    a.dropdown-item(href='#') Roku 1
-                                    a.dropdown-item(href='#') Roku 2
-                                    a.dropdown-item(href='#') roku 3
-                        .col-12.text-center.pad-4
-                            button.btn.btn-success.btn-block Deploy

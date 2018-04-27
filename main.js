@@ -1,10 +1,11 @@
-const locals = {test: 'chris'};
-const pug = require('electron-pug')({pretty: true}, locals);
+const pug = require('electron-pug')({pretty: true});
 const url = require('url');
 const path = require('path');
-const {app, BrowserWindow, Menu, ipcMain} = require('electron');
+const {app, BrowserWindow, Menu, ipcMain, ipcRenderer} = require('electron');
 const projectController = require('./lib/controllers/projectController');
 const mongoose = require('mongoose');
+const async = require('async');
+const Project = require('./models/project')
 
 let mainWindow;
 let mainMenuTemplate = [

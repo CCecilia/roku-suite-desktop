@@ -14,9 +14,11 @@
   "author": "christian cecilia",
   "license": "MIT",
   "dependencies": {
+    "async": "^2.6.0",
     "bootstrap": "^4.1.0",
     "electron": "^1.8.4",
     "electron-pug": "^1.5.1",
+    "font-awesome": "^4.7.0",
     "git-branch": "^2.0.1",
     "jquery": "^3.3.1",
     "mongoose": "^5.0.16",

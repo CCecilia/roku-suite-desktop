@@ -27,6 +27,14 @@ body {
     color: #662d91;
 }
 
+#deploy-options {
+    background-color: #FFF;
+    padding: 5%;
+    width: 95%;
+    margin: 2% auto;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+}
+
 .roku-input {
     border: 1px solid #662d91;
     color: #662d91;
