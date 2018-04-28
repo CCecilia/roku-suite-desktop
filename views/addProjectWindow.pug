@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    #add-project-wrap.centered
+    .add-window-wrap.centered(style='margin-top: 15%;')
         .col-12
             form(name='add-project-form')
                 .row
@@ -23,4 +23,3 @@ block content
                         input#exclude-files.hidden(type='file', name='project_excluded_files', multiple='', requried='false', title='Any files you wish to exclude from bundling.')
                 .row
                     button.btn.btn-roku.btn-block(type='submit') Save
-                    button.btn.btn-danger.btn-block(type='button') Cancel

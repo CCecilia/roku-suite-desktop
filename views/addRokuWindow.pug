@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .add-window-wrap.centered(style='margin-top: 15%;')
+        .col-12
+            form(name='add-roku-form')
+                .row
+                    .form-group
+                        label.roku-font(for='ip-address') IP Address
+                        input#ip-address.form-control.roku-input(type='text', required='true', pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$", title='format xxx.xxx.xxx.xxx', placeholder='xxx.xxx.xxx.xxx')
+                .row
+                    .form-group
+                        label.roku-font(for='project_path') Device Name
+                        input#device-name.form-control.roku-input(type='text', required='true', title='Name of device.', value='My Roku')
+                .row
+                    .form-group
+                        label.roku-font(for='username') Username
+                        input#username.form-control.roku-input(type='text', required='true', title='Username used for device login.', value='rokudev')
+                .row
+                    .form-group
+                        label.roku-font(for='username') Password
+                        input#password.form-control.roku-input(type='password', required='true', title='Password used for device login.', placeholder='password')
+                .row
+                    button.btn.btn-roku.btn-block(type='submit') Save

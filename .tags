@@ -1,4 +1,36 @@
-click	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/main.js	/^                click() {$/;"	function	line:18
-click	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/main.js	/^                click() {$/;"	function	line:30
-click	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/main.js	/^                click() {$/;"	function	line:41
-click	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/main.js	/^                 click(item, focusedWindow) {$/;"	function	line:69
+lastElem	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/lib/frontEnd/addProjectWindow.js	/^Array.prototype.lastElem = function() {$/;"	function	line:3
+Array	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/lib/frontEnd/addProjectWindow.js	/^const branch = require('git-branch');$/;"	class	line:1
+Array.lastElem	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/lib/frontEnd/addProjectWindow.js	/^Array.prototype.lastElem = function() {$/;"	method	line:3
+const.createAddProjectWindow	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/lib/controllers/projectController.js	/^const controller = {$/;"	property	line:8
+body	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^body {$/;"	function	line:1
+#sidebar	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^#sidebar {$/;"	function	line:5
+#add-window-wrap	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^#add-window-wrap {$/;"	function	line:12
+#add-project-wrap .form-group	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^#add-project-wrap .form-group {$/;"	function	line:20
+#excluded_file_paths	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^#excluded_file_paths {$/;"	function	line:25
+#deploy-options	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^#deploy-options {$/;"	function	line:30
+.roku-input	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.roku-input {$/;"	function	line:38
+.sidebar-menu	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.sidebar-menu {$/;"	function	line:42
+.sidebar-brand	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.sidebar-brand {$/;"	function	line:50
+.sidebar-nav	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.sidebar-nav {$/;"	function	line:54
+.sidebar-nav:hover	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.sidebar-nav:hover {$/;"	function	line:61
+.project-card	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.project-card {$/;"	function	line:66
+.card	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.card {$/;"	function	line:72
+.roku-dropdown	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.roku-dropdown {$/;"	function	line:77
+.roku-font	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.roku-font {$/;"	function	line:82
+.btn-roku	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.btn-roku {$/;"	function	line:86
+.clickable	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.clickable {$/;"	function	line:91
+.hidden	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.hidden {$/;"	function	line:95
+.pad-2	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.pad-2 {$/;"	function	line:99
+.pad-3	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.pad-3 {$/;"	function	line:103
+.pad-4	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.pad-4 {$/;"	function	line:107
+.pad-top-4	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.pad-top-4 {$/;"	function	line:111
+.centered	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/assets/css/stylesheet.css	/^.centered {$/;"	function	line:115
+handleInputError	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/lib/frontEnd/global.js	/^function handleInputError(element) {$/;"	function	line:3
+handleInputError	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/lib/frontEnd/global.js	/^function handleInputError(element) {$/;"	function	line:3
+addProjectCardToWindow	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/lib/frontEnd/global.js	/^function addProjectCardToWindow(project) {$/;"	function	line:11
+addProjectCardToWindow	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/lib/frontEnd/global.js	/^function addProjectCardToWindow(project) {$/;"	function	line:11
+click	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/main.js	/^                click() {$/;"	function	line:19
+click	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/main.js	/^                click() {$/;"	function	line:31
+click	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/main.js	/^                click() {$/;"	function	line:42
+click	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/main.js	/^                 click(item, focusedWindow) {$/;"	function	line:70
+const.createAddRokuWindow	/Users/christiancecilia/Documents/Work/Stuff/roku-suite/lib/controllers/rokuController.js	/^const controller = {$/;"	property	line:1

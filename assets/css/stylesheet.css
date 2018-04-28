@@ -9,15 +9,14 @@ body {
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
 }
 
-#add-project-wrap {
+.add-window-wrap {
     width: 90%;
-    margin-top: 15%;
     padding: 3%;
     background-color: #FFF;
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
 }
 
-#add-project-wrap .form-group {
+.form-group {
     width: 100%;
     text-align: center;
 }

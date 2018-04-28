@@ -3,6 +3,7 @@ const url = require('url');
 const path = require('path');
 const {app, BrowserWindow, Menu, ipcMain, ipcRenderer} = require('electron');
 const projectController = require('./lib/controllers/projectController');
+const rokuController = require('./lib/controllers/rokuController');
 const mongoose = require('mongoose');
 const async = require('async');
 const Project = require('./models/project')
@@ -32,7 +33,7 @@ let mainMenuTemplate = [
                 }
             }
         ]
-    }
+    },
     {
         label: 'Rokus',
         submenu: [
@@ -104,10 +105,29 @@ app.on('ready', () => {
 });
 
 // handle new project
-ipcMain.on('new_project', (e, new_project) => {
+ipcMain.on('new_project', (e, new_project_data) => {
     // save
-    projectController.saveNewProject(new_project);
+    projectController.saveNewProject(new_project_data)
+    .then((new_project) => {
+        // update main window
+        mainWindow.webContents.send('new_project', new_project);
+    })
+    .catch((err) => {
+        // update main window
+        mainWindow.webContents.send('error', err);
+    });
+});
 
-    // update main window
-    mainWindow.webContents.send('new_project', new_project);
+// handle new roku
+ipcMain.on('new_roku_data', (e, new_roku_data) => {
+    // save
+    rokuController.saveNewRoku(new_roku_data)
+    .then((new_roku) => {
+        // update main window
+        mainWindow.webContents.send('new_roku', new_roku);
+    })
+    .catch((err) => {
+        // update main window
+        mainWindow.webContents.send('error', err);
+    });
 });
