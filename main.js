@@ -33,6 +33,17 @@ let mainMenuTemplate = [
             }
         ]
     }
+    {
+        label: 'Rokus',
+        submenu: [
+            {
+                label: 'Add',
+                click() {
+                    rokuController.createAddRokuWindow();
+                }
+            }
+        ]
+    }
 ]
 
 // database setup
