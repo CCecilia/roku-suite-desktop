@@ -1,7 +1,7 @@
 const pug = require('electron-pug')({pretty: true});
 const url = require('url');
 const path = require('path');
-const {app, BrowserWindow, Menu, ipcMain, ipcRenderer} = require('electron');
+const {app, BrowserWindow, Menu,  MenuItem, ipcMain, ipcRenderer} = require('electron');
 const projectController = require('./lib/controllers/projectController');
 const rokuController = require('./lib/controllers/rokuController');
 const userController = require('./lib/controllers/userController');
@@ -52,7 +52,11 @@ let mainMenuTemplate = [
             }
         ]
     }
-]
+];
+function test() {
+
+}
+
 
 // database setup
 const mongoDB = 'mongodb://localhost:27017/rokuSuite';
@@ -80,6 +84,18 @@ if( process.env.NODE_ENV !== 'production' ) {
             },
             {
                 role: 'reload'
+            },
+            {
+                label: 'Test',
+                click() {
+                    let sign_out = {
+                        label: 'Sign Out',
+                        click() {
+                            userController.signOut()
+                        }
+                    }
+                    console.log(mainMenuTemplate[1].submenu[0]);
+                }
             }
         ]
     })
@@ -144,6 +160,8 @@ ipcMain.on('new_user_data', (e, new_user_data) => {
     // save
     userController.saveNewUser(new_user_data)
     .then((new_user) => {
+        // update Menu
+
         // update main window
         mainWindow.webContents.send('new_user', new_user);
     })
