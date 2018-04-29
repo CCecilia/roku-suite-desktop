@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    .add-window-wrap.centered(style='margin-top: 15%;')
+        .col-12
+            form(name='sign-in-form')
+                .row
+                    .form-group
+                        label.roku-font(for='email') Email
+                        input#email.form-control.roku-input(type='email', required='true', name='email', title='Login email', placeholder='email')
+                .row
+                    .form-group
+                        label.roku-font(for='username') Password
+                        input#password.form-control.roku-input(type='password', required='true', name='password', title='Login pasword', placeholder='password')
+                .row#register-hidden.hidden
+                    .form-group
+                        label.roku-font(for='username') Confirm Password
+                        input#confirm-password.form-control.roku-input(type='password', required='true', name='confirm-password', title='Confirm pasword', placeholder='confirm password')
+                .row
+                    button#signin-btn.btn.btn-roku.btn-block(type='submit') Sign-In
+                    button#register-btn.btn.btn-roku.btn-block(type='button') Register

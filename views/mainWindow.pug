@@ -12,9 +12,10 @@ block content
         #main-content.col-9
             #deploy-options.row
                 .col-6.offset-3.text-center
-                    .dropdown
-                        button.btn.btn-roku.btn-block.dropdown-toggle(type='button', data-toggle='dropdown')
-                          | Select Roku
-                        .dropdown-menu
-                          a.dropdown-item(href='#') Cooper
+                    label.roku-font(for='roku-select')
+                        h4 Select Roku
+                    select#roku-select.selectpicker.btn.btn-roku(multiple='true', data-actions-box="true", data-header='Select Roku')
+                        option Cooper
+                        option Home
+                        option My Roku
             #projects.row

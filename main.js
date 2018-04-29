@@ -4,6 +4,7 @@ const path = require('path');
 const {app, BrowserWindow, Menu, ipcMain, ipcRenderer} = require('electron');
 const projectController = require('./lib/controllers/projectController');
 const rokuController = require('./lib/controllers/rokuController');
+const userController = require('./lib/controllers/userController');
 const mongoose = require('mongoose');
 const async = require('async');
 const Project = require('./models/project')
@@ -14,7 +15,13 @@ let mainMenuTemplate = [
         label: 'File',
         submenu: [
             {
-                label: 'quit',
+                label: 'Sign-in',
+                click() {
+                    userController.createSignInWindow();
+                }
+            },
+            {
+                label: 'Quit',
                 accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
                 click() {
                     app.quit();
@@ -125,6 +132,20 @@ ipcMain.on('new_roku_data', (e, new_roku_data) => {
     .then((new_roku) => {
         // update main window
         mainWindow.webContents.send('new_roku', new_roku);
+    })
+    .catch((err) => {
+        // update main window
+        mainWindow.webContents.send('error', err);
+    });
+});
+
+// handle new user
+ipcMain.on('new_user_data', (e, new_user_data) => {
+    // save
+    userController.saveNewUser(new_user_data)
+    .then((new_user) => {
+        // update main window
+        mainWindow.webContents.send('new_user', new_user);
     })
     .catch((err) => {
         // update main window

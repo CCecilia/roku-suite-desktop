@@ -9,6 +9,12 @@ body {
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
 }
 
+.dropdown-toggle {
+    border: 0px;
+    background-color: #662d91;
+    color: #FFF;
+}
+
 .add-window-wrap {
     width: 90%;
     padding: 3%;
