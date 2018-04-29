@@ -4,8 +4,7 @@ const path = require('path');
 const {app, BrowserWindow, Menu,  MenuItem, ipcMain, ipcRenderer} = require('electron');
 const projectController = require('./lib/controllers/projectController');
 const rokuController = require('./lib/controllers/rokuController');
-const userController = require('./lib/controllers/userController');
-const mongoose = require('mongoose');
+// const userController = require('./lib/controllers/userController');
 const async = require('async');
 const Project = require('./models/project')
 
@@ -14,12 +13,7 @@ let mainMenuTemplate = [
     {
         label: 'File',
         submenu: [
-            {
-                label: 'Sign-in',
-                click() {
-                    userController.createSignInWindow();
-                }
-            },
+            {role: 'minimize'},
             {
                 label: 'Quit',
                 accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
@@ -53,17 +47,6 @@ let mainMenuTemplate = [
         ]
     }
 ];
-function test() {
-
-}
-
-
-// database setup
-const mongoDB = 'mongodb://localhost:27017/rokuSuite';
-mongoose.connect(mongoDB);
-mongoose.Promise = global.Promise;
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // fix menu spacing on mac
 if( process.platform == 'darwin' ) {
@@ -155,18 +138,18 @@ ipcMain.on('new_roku_data', (e, new_roku_data) => {
     });
 });
 
-// handle new user
-ipcMain.on('new_user_data', (e, new_user_data) => {
-    // save
-    userController.saveNewUser(new_user_data)
-    .then((new_user) => {
-        // update Menu
-
-        // update main window
-        mainWindow.webContents.send('new_user', new_user);
-    })
-    .catch((err) => {
-        // update main window
-        mainWindow.webContents.send('error', err);
-    });
-});
+// // handle new user
+// ipcMain.on('new_user_data', (e, new_user_data) => {
+//     // save
+//     userController.saveNewUser(new_user_data)
+//     .then((new_user) => {
+//         // update Menu
+//
+//         // update main window
+//         mainWindow.webContents.send('new_user', new_user);
+//     })
+//     .catch((err) => {
+//         // update main window
+//         mainWindow.webContents.send('error', err);
+//     });
+// });

@@ -1,27 +1,9 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+function Roku(ip_address, device_name, username, password, date_created=Date.now()) {
+    this.ip_address = ip_address;
+    this.device_name = device_name;
+    this.username = username;
+    this.password = password;
+    this.date_created = date_created;
+}
 
-let RokuSchema = new Schema({
-    ip_address: {
-        type: String,
-        required: true
-    },
-    device_name: {
-        type: String,
-        required: true
-    },
-    usename: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    date_created: {
-        type: Date,
-        default: Date.now
-    }
-});
-
-module.exports = mongoose.model('Roku', RokuSchema);
+module.exports = Roku;

@@ -1,1 +1,1 @@
-(node_modules|views|lib/frontEnd|assets)
+(node_modules|views|lib/frontEnd|assets|data)

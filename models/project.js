@@ -1,26 +1,9 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+function Project(name, root_path, excluded_file_paths=[], git_branch='Git', date_created=Date.now()) {
+    this.name = name;
+    this.root_path = root_path;
+    this.excluded_file_paths = excluded_file_paths;
+    this.git_branch = git_branch;
+    this.date_created = date_created;
+}
 
-let ProjectSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    root_path: {
-        type: String,
-        required: true
-    },
-    excluded_file_paths: {
-        type: Array
-    },
-    git_branch: {
-        type: String,
-        default: 'Git Branch'
-    },
-    date_created: {
-        type: Date,
-        default: Date.now
-    }
-});
-
-module.exports = mongoose.model('Project', ProjectSchema);
+module.exports = Project;
