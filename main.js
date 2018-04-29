@@ -4,9 +4,8 @@ const path = require('path');
 const {app, BrowserWindow, Menu,  MenuItem, ipcMain, ipcRenderer} = require('electron');
 const projectController = require('./lib/controllers/projectController');
 const rokuController = require('./lib/controllers/rokuController');
-// const userController = require('./lib/controllers/userController');
 const async = require('async');
-const Project = require('./models/project')
+const db = require('./lib/config/database')
 
 let mainWindow;
 let mainMenuTemplate = [
@@ -86,28 +85,44 @@ if( process.env.NODE_ENV !== 'production' ) {
 
 // listen for app to be ready
 app.on('ready', () => {
-    // create new window
-    mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
-        icon: path.join(__dirname, 'public', 'brs_icon.ico')
+    async.parallel({
+        projects: function(callback){
+            db.Projects.find()
+            .exec(callback);
+        },
+        rokus: function(callback){
+            db.Rokus.find()
+            .exec(callback);
+        }
+    }, function(err, results){
+        // create new window
+        mainWindow = new BrowserWindow({
+            width: 800,
+            height: 600,
+            icon: path.join(__dirname, 'public', 'brs_icon.ico')
+        });
+
+        mainWindow.init_data = {
+            projects: results.projects,
+            rokus: results.rokus
+        };
+
+        // load html file into app
+        mainWindow.loadURL(url.format({
+            pathname: path.join(__dirname, 'views', 'mainWindow.pug'),
+            protocol: 'file:',
+            slashes: true
+        }));
+
+        // quit app on close
+        mainWindow.on('closed', () => app.quit());
+
+        // build menu from template
+        const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+
+        // insert Menu
+        Menu.setApplicationMenu(mainMenu);
     });
-
-    // load html file into app
-    mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'views', 'mainWindow.pug'),
-        protocol: 'file:',
-        slashes: true
-    }));
-
-    // quit app on close
-    mainWindow.on('closed', () => app.quit());
-
-    // build menu from template
-    const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-
-    // insert Menu
-    Menu.setApplicationMenu(mainMenu);
 });
 
 // handle new project
@@ -138,18 +153,15 @@ ipcMain.on('new_roku_data', (e, new_roku_data) => {
     });
 });
 
-// // handle new user
-// ipcMain.on('new_user_data', (e, new_user_data) => {
-//     // save
-//     userController.saveNewUser(new_user_data)
-//     .then((new_user) => {
-//         // update Menu
-//
-//         // update main window
-//         mainWindow.webContents.send('new_user', new_user);
-//     })
-//     .catch((err) => {
-//         // update main window
-//         mainWindow.webContents.send('error', err);
-//     });
-// });
+// handle deploy
+ipcMain.on('deploy_data', (e, deploy_data) => {
+    rokuController.deploy(deploy_data)
+    .then((deploy_status) => {
+        // update main window
+        mainWindow.webContents.send('deploy_status', deploy_status);
+    })
+    .catch((err) => {
+        // update main window
+        mainWindow.webContents.send('error', err);
+    });
+});

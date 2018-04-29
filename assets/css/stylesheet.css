@@ -27,6 +27,11 @@ body {
     text-align: center;
 }
 
+.active-nav {
+    background-color: #662d91;
+    color: #FFF;
+}
+
 #excluded_file_paths {
     list-style-type: none;
     color: #662d91;
