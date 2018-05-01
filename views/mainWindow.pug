@@ -16,3 +16,33 @@ block content
                         h4 Select Roku
                     select#roku-select.selectpicker.btn.btn-roku(data-actions-box="true", data-header='Select Roku')
             #projects.row
+            #tools-pane.row.hidden
+                #remote
+                    h4.text-center Remote
+                    .row.remote-btn-row
+                        .col-6.text-right
+                            button.btn.btn-roku.remote-btn(type='button', data-id='back') Back
+                        .col-6.text-left
+                            button.btn.btn-roku.remote-btn(type='button', data-id='home') Home
+                    .row.remote-btn-row
+                        .col-12.text-center
+                            button.btn.btn-roku.remote-btn(type='button', data-id='up') Up
+
+                    .row.remote-btn-row
+                        .col-5.text-right
+                            button.btn.btn-roku.remote-btn(type='button', data-id='left') Left
+                        .col-2.text-center
+                            button.btn.btn-roku.remote-btn(type='button', data-id='select') OK
+                        .col-5.text-left
+                            button.btn.btn-roku.remote-btn(type='button', data-id='right') Right
+                    .row.remote-btn-row
+                        .col-12.text-center
+                            button.btn.btn-roku.remote-btn(type='button', data-id='down') Down
+                    hr
+                    .row#remote-tracker
+                        .col-12.text-center
+                            h4 Keypresses
+                        .row
+                            .col-12
+                                ul#key-presses
+            #refs-pane.row.hidden

@@ -145,7 +145,8 @@ ipcMain.on('new_roku_data', (e, new_roku_data) => {
     rokuController.saveNewRoku(new_roku_data)
     .then((new_roku) => {
         // update main window
-        mainWindow.webContents.send('new_roku', new_roku);
+        mainWindow.init_data.rokus.push(new_roku);
+        mainWindow.reload();
     })
     .catch((err) => {
         // update main window
@@ -165,3 +166,4 @@ ipcMain.on('deploy_data', (e, deploy_data) => {
         mainWindow.webContents.send('error', err);
     });
 });
+
