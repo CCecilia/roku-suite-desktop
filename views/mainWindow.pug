@@ -9,6 +9,7 @@ block content
                 li.sidebar-nav.active-nav.clickable(data-target='projects') Projects
                 li.sidebar-nav.clickable(data-target='tools') Tools
                 li.sidebar-nav.clickable(data-target='refs') Refs
+                li.sidebar-nav.clickable(data-target='tests') Tests
         #main-content.col-9
             #deploy-options.row
                 .col-6.offset-3.text-center
@@ -26,23 +27,34 @@ block content
                             button.btn.btn-roku.remote-btn(type='button', data-id='home') Home
                     .row.remote-btn-row
                         .col-12.text-center
-                            button.btn.btn-roku.remote-btn(type='button', data-id='up') Up
-
+                            button.btn.btn-roku.remote-btn(type='button', data-id='up') &nbsp Up &nbsp
                     .row.remote-btn-row
                         .col-5.text-right
                             button.btn.btn-roku.remote-btn(type='button', data-id='left') Left
                         .col-2.text-center
-                            button.btn.btn-roku.remote-btn(type='button', data-id='select') OK
+                            button.btn.btn-roku.remote-btn(type='button', data-id='select')  OK 
                         .col-5.text-left
                             button.btn.btn-roku.remote-btn(type='button', data-id='right') Right
                     .row.remote-btn-row
                         .col-12.text-center
                             button.btn.btn-roku.remote-btn(type='button', data-id='down') Down
                     hr
-                    .row#remote-tracker
+                    .row
                         .col-12.text-center
-                            h4 Keypresses
-                        .row
-                            .col-12
-                                ul#key-presses
+                            label.switch
+                                input(type='checkbox', name='key_logging')
+                                span.slider.round
+                        .col-12.text-center
+                            p.key-logger-status Key Logging
             #refs-pane.row.hidden
+                h1.text-center.roku-font Refs
+                h4.text-muted.text-center Coming Soon
+            #tests-pane.row.hidden
+                .col-3.tool-card.clickable(data-id='${keyLogList._id}')
+                    .row
+                        .col-12.text-center
+                            //- h4.roku-font ${keyLogList.name}
+                            h4.roku-font Test Login
+                        .col-12.text-center.pad-4
+                            button.btn.btn-roku.btn-block.deploy-btn(data-id='${keyLogList._id}')
+                                | Open

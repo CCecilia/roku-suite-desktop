@@ -1,0 +1,54 @@
+extends layout
+
+block content
+	.tool-window-wrap
+		.row
+			.col-12
+				h3.text-center.roku-font Key Logs
+				i#key-logger-menu-toggle.clickable.fa.fa-cog.fa-2x
+			.col-12#key-logger-menu.hidden
+				.row
+					.col-6
+						ul.menu-list
+							li.menu-item 
+								a.logger-menu-item(href="#save", data-toggle="modal", data-target="#saveLogsModal")
+									i.fa.fa-save.fa-2x
+							li.menu-item 
+								a.logger-menu-item(href="#open")
+									i.fa.fa-folder-open.fa-2x
+							li.menu-item 
+								a.logger-menu-item(href="#clear")
+									i.fa.fa-ban.fa-2x
+					.col-6.text-right
+						ul.menu-list
+							li.menu-item 
+								a.logger-menu-item(href="#play")
+									i.fa.fa-play.fa-2x
+							li.menu-item 
+								a.logger-menu-item(href="#pause")
+									i.fa.fa-pause.fa-2x
+							li.menu-item 
+								a.logger-menu-item(href="#stop")
+									i.fa.fa-stop.fa-2x
+		.row
+			ul#key-log-list
+
+	//- Modal
+	#saveLogsModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='#saveLogsModalTitle', aria-hidden='true')
+		.modal-dialog.modal-sm.modal-dialog-centered(role='document')
+			.modal-content
+				.modal-header
+					h5#saveLogsModalTitle.modal-title.roku-font Save Logs
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+				form(name='save-log-form')
+					.modal-body
+						.form-group
+							label.roku-font(for='log-name') Log Name
+							input#log-name.form-control.roku-input(type='text', required='true', title='Name of log.', placeholder='log name')
+					.modal-footer
+						button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+						button.btn.btn-roku(type='submit') Save
+
+				
+

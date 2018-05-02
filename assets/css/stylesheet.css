@@ -54,6 +54,16 @@ body {
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
 }
 
+
+#refs-pane { 
+    background-color: #FFF;
+    padding: 5%;
+    width: 99%;
+    margin: 2% auto;
+    color: #662d91;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+
+}
 .remote-btn-row {
     margin: 2% 0;
 }
@@ -90,6 +100,13 @@ body {
     background-color: #FFF;
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
 }
+
+.tool-card {
+    margin: 2%;
+    background-color: #FFF;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+    padding: 2%;
+}   
 
 .card {
     width: 75%;
@@ -138,4 +155,115 @@ body {
     margin: 0 auto;
 }
 
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
 
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #CCC;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #FFF;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #662d91;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #662d91;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translate(26px);
+    -ms-transform: translate(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.key-logger-status {
+    color: red;
+}
+
+.tool-window-wrap {
+    width: 90%;
+    padding: 3%;
+    background-color: #FFF;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+}
+
+#key-logger-menu-toggle {
+    color: #662d91;
+    position: absolute;
+    top: 0;
+    right: 5%;
+}
+
+.menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    display: inline-block;
+}
+
+.menu-item a {
+    color: #662d91;
+}
+
+.btn-roku-outline {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    color: #FFF;
+}
+
+#key-log-list {
+    list-style-type: none;
+    margin: 0 auto; 
+    padding: 0;
+    width: 90%;
+}
+
+.key-log {
+    margin: 2% 0;
+}
+
+.key-log {
+    background-color: #FFF;
+    border: 1px solid #662d91;
+    color: #662d91;
+    border-radius: 25px;
+    padding-left: 1%;
+}

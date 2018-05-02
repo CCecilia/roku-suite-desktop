@@ -4,6 +4,7 @@ const path = require('path');
 const {app, BrowserWindow, Menu,  MenuItem, ipcMain, ipcRenderer} = require('electron');
 const projectController = require('./lib/controllers/projectController');
 const rokuController = require('./lib/controllers/rokuController');
+const toolController = require('./lib/controllers/toolController');
 const async = require('async');
 const db = require('./lib/config/database')
 
@@ -86,25 +87,31 @@ if( process.env.NODE_ENV !== 'production' ) {
 // listen for app to be ready
 app.on('ready', () => {
     async.parallel({
-        projects: function(callback){
+        projects: (callback) => {
             db.Projects.find()
             .exec(callback);
         },
-        rokus: function(callback){
+        rokus: (callback) => {
             db.Rokus.find()
+            .exec(callback);
+        },
+        keyLogs: (callback) => {
+            db.KeyLogLists.find()
+            .sort({'date_created': 1})
             .exec(callback);
         }
     }, function(err, results){
         // create new window
         mainWindow = new BrowserWindow({
             width: 800,
-            height: 600,
+            height: 620,
             icon: path.join(__dirname, 'public', 'brs_icon.ico')
         });
 
         mainWindow.init_data = {
             projects: results.projects,
-            rokus: results.rokus
+            rokus: results.rokus,
+            keyLogs: results.keyLogs
         };
 
         // load html file into app
@@ -167,3 +174,26 @@ ipcMain.on('deploy_data', (e, deploy_data) => {
     });
 });
 
+ipcMain.on('key_logger', (e, key_logger) => {
+    if( key_logger ) {
+        toolController.openLoggerWindow();
+    } else {
+        toolController.closeLoggerWindow();
+    }
+});
+
+ipcMain.on('key_log', (e, key) => {
+    toolController.updateKeyLog(key);
+});
+
+ipcMain.on('key_log_data', (e, key_log_data) => {
+    toolController.saveKeyLogList(key_log_data)
+    .then((new_key_log) => {
+        // update main window
+        // mainWindow.webContents.send('new_project', new_project);
+    })
+    .catch((err) => {
+        // update main window
+        mainWindow.webContents.send('error', err);
+    });
+});
