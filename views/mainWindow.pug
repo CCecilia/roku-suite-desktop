@@ -9,7 +9,7 @@ block content
                 li.sidebar-nav.active-nav.clickable(data-target='projects') Projects
                 li.sidebar-nav.clickable(data-target='tools') Tools
                 li.sidebar-nav.clickable(data-target='refs') Refs
-                li.sidebar-nav.clickable(data-target='tests') Tests
+                li.sidebar-nav.clickable(data-target='key_logs') Key Logs
         #main-content.col-9
             #deploy-options.row
                 .col-6.offset-3.text-center
@@ -49,12 +49,4 @@ block content
             #refs-pane.row.hidden
                 h1.text-center.roku-font Refs
                 h4.text-muted.text-center Coming Soon
-            #tests-pane.row.hidden
-                .col-3.tool-card.clickable(data-id='${keyLogList._id}')
-                    .row
-                        .col-12.text-center
-                            //- h4.roku-font ${keyLogList.name}
-                            h4.roku-font Test Login
-                        .col-12.text-center.pad-4
-                            button.btn.btn-roku.btn-block.deploy-btn(data-id='${keyLogList._id}')
-                                | Open
+            #key-logs-pane.row.hidden

@@ -111,7 +111,7 @@ app.on('ready', () => {
         mainWindow.init_data = {
             projects: results.projects,
             rokus: results.rokus,
-            keyLogs: results.keyLogs
+            key_logs: results.keyLogs
         };
 
         // load html file into app

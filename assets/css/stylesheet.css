@@ -101,11 +101,12 @@ body {
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
 }
 
-.tool-card {
-    margin: 2%;
+.key-log-card {
+    margin: 3%;
     background-color: #FFF;
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
     padding: 2%;
+    display: inline-block;
 }   
 
 .card {
