@@ -70,14 +70,9 @@ if( process.env.NODE_ENV !== 'production' ) {
             },
             {
                 label: 'Test',
+                // to quickly test dev functions
                 click() {
-                    let sign_out = {
-                        label: 'Sign Out',
-                        click() {
-                            userController.signOut()
-                        }
-                    }
-                    console.log(mainMenuTemplate[1].submenu[0]);
+                    console.log('test')
                 }
             }
         ]
@@ -86,6 +81,7 @@ if( process.env.NODE_ENV !== 'production' ) {
 
 // listen for app to be ready
 app.on('ready', () => {
+    // async gather init data
     async.parallel({
         projects: (callback) => {
             db.Projects.find()
@@ -174,18 +170,21 @@ ipcMain.on('deploy_data', (e, deploy_data) => {
     });
 });
 
+// handle key logger toggle
 ipcMain.on('key_logger', (e, key_logger) => {
-    if( key_logger ) {
+    if( key_logger.open ) {
         toolController.openLoggerWindow();
     } else {
         toolController.closeLoggerWindow();
     }
 });
 
+// handle updating key window from main
 ipcMain.on('key_log', (e, key) => {
     toolController.updateKeyLog(key);
 });
 
+// how to handle new key log list
 ipcMain.on('key_log_data', (e, key_log_data) => {
     toolController.saveKeyLogList(key_log_data)
     .then((new_key_log) => {
