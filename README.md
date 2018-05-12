@@ -14,7 +14,7 @@ cmnd A or Projects > Add
 In add prject window
 ```
 Choose directory to your Roku channel project.
-Path and project name wil lget autofilled but cna be changed.
+Path and project name will be autofilled but can be changed.
 Exclude Files is for any files that should be excluded from side loading.
 NOTE. Any files/directories that begin with '.' will lautomatically be excluded from the packaging process for side load deployments.
 ```
