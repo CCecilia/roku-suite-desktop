@@ -2,9 +2,76 @@
 
 Roku suite was built with Roku channel development in minf It's the ability to add multiple version of a project as well as multiple Roku devices. There is a built in remote wioth key logging ability. Logs acan also be saved into playlists.
 
+## Basic Usage
+
+### Add a project
+
+Open add project window
+```
+cmnd A or Projects > Add
+```
+
+In add prject window
+```
+Choose directory to your Roku channel project.
+Path and project name wil lget autofilled but cna be changed.
+Exclude Files is for any files that should be excluded from side loading.
+NOTE. Any files/directories that begin with '.' will lautomatically be excluded from the packaging process for side load deployments.
+```
+
+Save Project
+```
+click save
+```
+
+### Add a Roku
+Open add Roku window
+```
+Rokus > Add
+```
+
+In add Roku window
+```
+Fill in fields ip address, device name, username, and password.
+Ip address is the address to your Roku on your network. ex. 10.10.10.99
+Device name can be whatever you want comes prefilled with My Roku.
+Username is the username for ypu roku comes prefilled as rokudev.
+Password is the password to your Roku usually set after enabling developer mode.
+```
+
+Save Roku
+```
+Click save and Roku will be added to Roku's pane as well as the Select Roku for deployment dropdown.
+```
+
+### Deploy to a Roku
+
+Select Roku 
+```
+Ensure the Roku you want to deploy to is selected in the top dropdown in the main window.
+```
+
+Click Deploy
+```
+Click deploy on the project that you wish to be side loaded in the projects pane.
+```
+
+### Key Press Logger
+
+Open logger
+```
+In the tools pane at the bottom of the remote there is toggle labele key logger.
+```
+
+Once toggled active
+```
+A key logger window will open and begin logging presses from the remote in the main window. Individual key presses can be move within the key logger window. As well the cog in the top right of the key logger window will open a key logger menu that will give options to save, play, pause the set of key logs. which can later found in the key logs pane.
+```
+
+
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
