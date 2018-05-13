@@ -1,4 +1,4 @@
-# Roku Suite
+# Roku Suite version 1.0.0
 
 Roku suite was built with Roku channel development in minf It's the ability to add multiple version of a project as well as multiple Roku devices. There is a built in remote wioth key logging ability. Logs acan also be saved into playlists.
 

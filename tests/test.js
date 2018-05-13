@@ -5,11 +5,12 @@ const chaiAsPromised = require('chai-as-promised');
 
 let electronPath = path.join(__dirname, '..', 'node_modules', '.bin', 'electron');
 
-// if( process.platform === 'win32' ) {
-// 	electronPath += '.cmd'
-// }
+if( process.platform === 'win32' ) {
+	electronPath += '.cmd'
+}
 
 var appPath = path.join(__dirname, '..');
+
 
 var app = new Application({
 	path: electronPath,
@@ -40,3 +41,4 @@ describe('Test Main Window', function() {
 			.getTitle().should.eventually.equal('Roku Suite');
 	});
 });
+

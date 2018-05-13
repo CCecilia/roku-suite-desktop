@@ -4,7 +4,7 @@
   "description": "A suite of tools for roku development.",
   "main": "main.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha tests/test.js",
+    "test": "mocha ./tests/test.js",
     "start": "electron ."
   },
   "keywords": [
