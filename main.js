@@ -160,7 +160,6 @@ ipcMain.on('new_roku_data', (e, new_roku_data) => {
     });
 });
 
-
 // handle deploy
 ipcMain.on('deploy_data', (e, deploy_data) => {
     rokuController.deploy(deploy_data)
