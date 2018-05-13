@@ -82,7 +82,6 @@ if( process.env.NODE_ENV !== 'production' ) {
     })
 }
 
-
 app.on('ready', () => {
     // async gather init data
     async.parallel({
