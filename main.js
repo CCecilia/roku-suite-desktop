@@ -161,15 +161,15 @@ ipcMain.on('new_roku_data', (e, new_roku_data) => {
 
 // handle deploy
 ipcMain.on('deploy_data', (e, deploy_data) => {
-    rokuController.deploy(deploy_data)
-    .then((deploy_status) => {
-        // update main window
-        mainWindow.webContents.send('deploy_status', deploy_status);
-    })
-    .catch((err) => {
-        // update main window
-        mainWindow.webContents.send('error', err);
-    });
+    rokuController.deploy(deploy_data, mainWindow)
+        .then((deploy_status) => {
+            // update main window
+            mainWindow.webContents.send('deploy_status', deploy_status);
+        })
+        .catch((err) => {
+            // update main window
+            mainWindow.webContents.send('error', err);
+        });
 });
 
 // handle key logger toggle
