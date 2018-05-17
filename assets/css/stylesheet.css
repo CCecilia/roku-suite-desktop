@@ -276,3 +276,8 @@ input:checked + .slider:before {
     border-radius: 25px;
     padding-left: 1%;
 }
+
+input[name="time_break"] {
+    width: 25%;
+    color: #662d91;
+}
