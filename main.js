@@ -198,3 +198,9 @@ ipcMain.on('key_log_data', (e, key_log_data) => {
         mainWindow.webContents.send('error', err);
     });
 });
+
+// auto deploy
+ipcMain.on('auto_deploy_data', (e, auto_deploy_data) => {
+    console.log('auto deploy', auto_deploy_data);
+    projectController.autoDeploy(auto_deploy_data, mainWindow);
+});

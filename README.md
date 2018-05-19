@@ -68,6 +68,17 @@ Once toggled active
 A key logger window will open and begin logging presses from the remote in the main window. Individual key presses can be move within the key logger window. As well the cog in the top right of the key logger window will open a key logger menu that will give options to save, play, pause the set of key logs. which can later found in the key logs pane.
 ```
 
+### Multiple Rokus
+
+Select multiple Rokus
+```
+To selecte multiple Rokus from main dropdown hold down Ctrl while selecting.
+```
+
+Note
+```
+While multiple Rokus are selected they can be controlled with the remote and deployed to.
+```
 
 ## Getting Started
 
