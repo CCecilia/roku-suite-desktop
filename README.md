@@ -60,7 +60,7 @@ Click deploy on the project that you wish to be side loaded in the projects pane
 
 Open logger
 ```
-In the tools pane at the bottom of the remote there is toggle labele key logger.
+In the tools pane at the bottom of the remote there is toggle key logger.
 ```
 
 Once toggled active
@@ -78,6 +78,13 @@ To selecte multiple Rokus from main dropdown hold down Ctrl while selecting.
 Note
 ```
 While multiple Rokus are selected they can be controlled with the remote and deployed to.
+```
+
+### Auto Deploy
+
+While auto deploy is activated
+```
+While auto deploy is active any changes made to files that are not excluded from normal side loading will trigger automatic side loading of the project that has the Auto Deploy button activated.
 ```
 
 ## Getting Started
