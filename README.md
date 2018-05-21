@@ -87,6 +87,12 @@ While auto deploy is activated
 While auto deploy is active any changes made to files that are not excluded from normal side loading will trigger automatic side loading of the project that has the Auto Deploy button activated.
 ```
 
+### Removal of Projects, Rokus, Key Logs
+To remove
+```
+To remove any project, Roku, or key log just simply simply drag it while in the main window into the trash can that will appear on start of drag.
+```
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
