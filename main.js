@@ -214,7 +214,7 @@ ipcMain.on('removal_data', (e, removal_data) => {
     if( removal_data.element === 'project' ) {
         projectController.remove(removal_data._id)
             .then((success_msg) => {
-                mainWindow.webContents.send('notificationData', {title: 'Project', msg: 'removed'})
+                mainWindow.webContents.send('notificationData', {title: 'Project', msg: 'removed'});
             })
             .catch((err) => {
                 mainWindow.webContents.send('error', err);
@@ -222,7 +222,7 @@ ipcMain.on('removal_data', (e, removal_data) => {
     } else if( removal_data.element === 'roku' ) {
         rokuController.remove(removal_data._id)
             .then((success_msg) => {
-                mainWindow.webContents.send('notificationData', {title: 'Roku', msg: 'removed'})
+                mainWindow.webContents.send('notificationData', {title: 'Roku', msg: 'removed'});
             })
             .catch((err) => {
                 mainWindow.webContents.send('error', err);
@@ -230,7 +230,7 @@ ipcMain.on('removal_data', (e, removal_data) => {
     } else if( removal_data.element === 'log' ) {
         toolController.remove(removal_data._id)
             .then((success_msg) => {
-                mainWindow.webContents.send('notificationData', {title: 'Key Log', msg: 'removed'})
+                mainWindow.webContents.send('notificationData', {title: 'Key Log', msg: 'removed'});
             })
             .catch((err) => {
                 mainWindow.webContents.send('error', err);
