@@ -2,6 +2,7 @@
 const pug = require('electron-pug')({pretty: true});
 const url = require('url');
 const path = require('path');
+const fs = require('fs');
 const {app, BrowserWindow, Menu,  MenuItem, ipcMain, ipcRenderer} = require('electron');
 const async = require('async');
 // controllers
@@ -80,6 +81,13 @@ if( process.env.NODE_ENV !== 'production' ) {
             }
         ]
     })
+}
+
+
+console.log(path.join(__dirname, 'data'))
+// check for data dir
+if( !fs.existsSync(path.join(__dirname, 'data')) ) {
+    fs.mkDirSync(path.join(__dirname, 'data'));
 }
 
 

@@ -5,7 +5,36 @@
   "main": "main.js",
   "scripts": {
     "test": "mocha ./tests/test.js",
-    "start": "electron ."
+    "start": "npm install && electron .",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "build": {
+    "appId": "rokusuite",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "assets/brs_icon.ico"
+    }
   },
   "keywords": [
     "Roku",
@@ -18,7 +47,6 @@
     "async": "^2.6.0",
     "bootstrap": "^4.1.0",
     "bootstrap-select": "^1.13.1",
-    "electron": "^1.8.4",
     "electron-pug": "^1.5.1",
     "font-awesome": "^4.7.0",
     "git-branch": "^2.0.1",

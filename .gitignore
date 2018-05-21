@@ -6,3 +6,4 @@ node_modules
 projects.db
 rokus.db
 out
+dist
