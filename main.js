@@ -82,6 +82,7 @@ if( process.env.NODE_ENV !== 'production' ) {
     })
 }
 
+
 app.on('ready', () => {
     // async gather init data
     async.parallel({
@@ -97,14 +98,17 @@ app.on('ready', () => {
             db.KeyLogLists.find()
             .sort({'date_created': 1})
             .exec(callback);
-        }
+        },
     }, function(err, results){
+        projectController.checkGitBranches(results.projects);
+
         // create new window
         mainWindow = new BrowserWindow({
             width: 800,
             height: 620,
             icon: path.join(__dirname, 'public', 'brs_icon.ico')
         });
+
 
         mainWindow.init_data = {
             projects: results.projects,
