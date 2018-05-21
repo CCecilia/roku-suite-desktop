@@ -13,11 +13,11 @@ block content
                 li.sidebar-nav.clickable(data-target='key_logs') Key Logs
         #main-content.col-9
             #deploy-options.row
-                .col-6.offset-3.text-center
+                .col-6#roku-select-wrap.offset-3.text-center
                     label.roku-font(for='roku-select')
                         h4 Select Roku
                     select#roku-select.selectpicker.btn.btn-roku(data-actions-box="true", data-header='Select Roku', multiple=true)
-            #trashcan.row
+            #trashcan.row.hidden
                 .col-6.offset-3.text-center(ondrop='trash(event)', ondragover='allowDrop(event)')
                     h1.roku-font
                         i.fa.fa-trash
