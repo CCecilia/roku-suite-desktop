@@ -208,3 +208,32 @@ ipcMain.on('auto_deploy_data', (e, auto_deploy_data) => {
     console.log('auto deploy', auto_deploy_data);
     projectController.autoDeploy(auto_deploy_data, mainWindow);
 });
+
+ipcMain.on('removal_data', (e, removal_data) => {
+    // check type of removal and have controller remove element from db then send notification or error
+    if( removal_data.element === 'project' ) {
+        projectController.remove(removal_data._id)
+            .then((success_msg) => {
+                mainWindow.webContents.send('notificationData', {title: 'Project', msg: 'removed'})
+            })
+            .catch((err) => {
+                mainWindow.webContents.send('error', err);
+            });
+    } else if( removal_data.element === 'roku' ) {
+        rokuController.remove(removal_data._id)
+            .then((success_msg) => {
+                mainWindow.webContents.send('notificationData', {title: 'Roku', msg: 'removed'})
+            })
+            .catch((err) => {
+                mainWindow.webContents.send('error', err);
+            });
+    } else if( removal_data.element === 'log' ) {
+        toolController.remove(removal_data._id)
+            .then((success_msg) => {
+                mainWindow.webContents.send('notificationData', {title: 'Key Log', msg: 'removed'})
+            })
+            .catch((err) => {
+                mainWindow.webContents.send('error', err);
+            });
+    }
+});

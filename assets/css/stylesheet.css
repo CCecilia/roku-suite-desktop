@@ -45,6 +45,15 @@ body {
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
 }
 
+#trashcan {
+    background-color: #FFF;
+    padding: 5%;
+    width: 30%;
+    margin: 2% auto;
+    border: 3px solid red;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+}
+
 #remote {
     background-color: #FFF;
     padding: 5%;
@@ -54,8 +63,7 @@ body {
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
 }
 
-
-#refs-pane { 
+#refs-pane {
     background-color: #FFF;
     padding: 5%;
     width: 99%;
@@ -64,13 +72,16 @@ body {
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
 
 }
+
 .remote-btn-row {
     margin: 2% 0;
 }
+
 .roku-input {
     border: 1px solid #662d91;
     color: #662d91;
 }
+
 .sidebar-menu {
     list-style-type: none;
     margin: 0;
@@ -88,7 +99,6 @@ body {
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
     padding: 5%;
 }
-
 
 .sidebar-nav:hover {
     background-color: #662d91;
@@ -115,7 +125,7 @@ body {
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
     padding: 2%;
     display: inline-block;
-}   
+}
 
 .card {
     width: 75%;
@@ -260,7 +270,7 @@ input:checked + .slider:before {
 
 #key-log-list {
     list-style-type: none;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 0;
     width: 90%;
 }
