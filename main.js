@@ -84,13 +84,6 @@ if( process.env.NODE_ENV !== 'production' ) {
 }
 
 
-console.log(path.join(__dirname, 'data'))
-// check for data dir
-if( !fs.existsSync(path.join(__dirname, 'data')) ) {
-    fs.mkDirSync(path.join(__dirname, 'data'));
-}
-
-
 app.on('ready', () => {
     // async gather init data
     async.parallel({
@@ -114,7 +107,7 @@ app.on('ready', () => {
         mainWindow = new BrowserWindow({
             width: 800,
             height: 620,
-            icon: path.join(__dirname, 'public', 'brs_icon.ico')
+            icon: path.join(__dirname, 'assets', 'images', 'rokusuite_icon.ico')
         });
 
 

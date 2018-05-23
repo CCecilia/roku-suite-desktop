@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "mocha ./tests/test.js",
-    "start": "npm install && electron .",
+    "start": "electron .",
     "pack": "build --dir",
     "dist": "build"
   },
@@ -23,7 +23,8 @@
           "type": "link",
           "path": "/Applications"
         }
-      ]
+      ],
+      "icon": "assets/images/rokusuite_icon.png"
     },
     "linux": {
       "target": [
@@ -33,7 +34,7 @@
     },
     "win": {
       "target": "squirrel",
-      "icon": "assets/brs_icon.ico"
+      "icon": "assets/images/rokusuite_icon.ico"
     }
   },
   "keywords": [
