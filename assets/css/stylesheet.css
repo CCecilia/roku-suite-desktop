@@ -54,7 +54,7 @@ body {
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
 }
 
-#remote {
+#remote, #mouse-capture {
     background-color: #FFF;
     padding: 5%;
     width: 96%;
@@ -70,7 +70,11 @@ body {
     margin: 2% auto;
     color: #662d91;
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+}
 
+#tools-pane {
+    overflow-y: scroll;
+    height: 70vh;
 }
 
 .remote-btn-row {
@@ -290,4 +294,10 @@ input:checked + .slider:before {
 input[name="time_break"] {
     width: 25%;
     color: #662d91;
+}
+
+#mouseCapture {
+    width: 100%;
+    height: 30%;
+    border: 2px solid #662d91;
 }
