@@ -93,6 +93,12 @@ To remove
 To remove any project, Roku, or key log just simply simply drag it while in the main window into the trash can that will appear on start of drag.
 ```
 
+### Mouse Capture
+```
+To use mouse capture just click into mouse capture area and ensure a Roku is selected in main drop down. Once captured mouse movements will translate into Roku movements as well as keyboards keys pressed while native Roku keyboard is open. Shift + q to remove mouse lock. 
+NOTE: Enter/Return = select on Roku.
+```
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.

@@ -6,8 +6,7 @@
   "scripts": {
     "test": "mocha ./tests/test.js",
     "start": "electron .",
-    "pack": "build --dir",
-    "dist": "build"
+    "pack-mac": "electron-packager . Roku-Suite --platform=darwin --arch=x64 --icon=assets/images/rokusuite_icon.icns --overwrite --ignore=/out/  --prune=true --out=release-builds"
   },
   "build": {
     "appId": "rokusuite",
@@ -62,7 +61,8 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
-    "electron-builder": "^20.13.3",
+    "electron": "^2.0.2",
+    "electron-packager": "^12.1.0",
     "jsdoc": "^3.5.5",
     "mocha": "^5.1.1",
     "spectron": "^3.8.0"
