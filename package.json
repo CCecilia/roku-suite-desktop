@@ -6,8 +6,7 @@
   "scripts": {
     "test": "mocha ./tests/test.js",
     "start": "electron .",
-    "pack-mac": "electron-packager . Roku-Suite --platform=darwin --arch=x64 --icon=assets/images/rokusuite_icon.icns --overwrite --ignore=/out/  --prune=true --out=release-builds",
-    "throttle-150": "cd ./node_modules/throttleneck && npm run shape --KBPS_DOWN=150"
+    "pack-mac": "electron-packager . Roku-Suite --platform=darwin --arch=x64 --icon=assets/images/rokusuite_icon.icns --overwrite --ignore=/out/  --prune=true --out=release-builds"
   },
   "build": {
     "appId": "rokusuite",
