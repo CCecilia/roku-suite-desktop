@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha ./tests/test.js",
     "start": "electron .",
-    "pack-mac": "electron-packager . Roku-Suite --platform=darwin --arch=x64 --icon=assets/images/rokusuite_icon.icns --overwrite --ignore=/out/  --prune=true --out=release-builds"
+    "pack-mac": "electron-packager . Roku-Suite --platform=darwin --arch=x64 --icon=assets/images/rokusuite_icon.icns --overwrite --ignore=/out/  --prune=true --out=release-builds",
+    "throttle-150": "cd ./node_modules/throttleneck && npm run shape --KBPS_DOWN=150"
   },
   "build": {
     "appId": "rokusuite",
@@ -45,18 +46,25 @@
   "dependencies": {
     "archiver": "^2.1.1",
     "async": "^2.6.0",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
     "bootstrap-select": "^1.13.1",
     "electron-pug": "^1.5.1",
+    "express": "^4.16.4",
+    "express-logger": "0.0.3",
+    "express-pino-logger": "^4.0.0",
     "font-awesome": "^4.7.0",
     "git-branch": "^2.0.1",
     "jquery": "^3.3.1",
+    "json-formatter-js": "^2.2.1",
     "nedb": "^1.8.0",
     "node-watch": "^0.5.8",
     "npm": "^6.4.1",
+    "pino": "^5.12.3",
     "popper.js": "^1.14.3",
     "pug": "^2.0.3",
-    "request": "^2.85.0"
+    "request": "^2.85.0",
+    "ws": "^7.0.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",

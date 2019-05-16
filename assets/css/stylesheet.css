@@ -77,6 +77,34 @@ body {
     height: 70vh;
 }
 
+#analytics-pane {
+    background-color: #FFF;
+    padding: 5%;
+    width: 99%;
+    margin: 2% auto;
+    color: #662d91;
+    box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, .2);
+}
+.analytics-event {
+    -webkit-animation: color-change 2s;
+    animation: color-change 2s;
+}
+@-webkit-keyframes color-change {
+    0% { color: red; }
+    100% { color: white; }
+}
+@keyframes color-change {
+    0% { color: red; }
+    100% { color: white; }
+}
+#analytics-data-view {
+    height: 360px;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: black;
+    color: white;
+}
+
 .remote-btn-row {
     margin: 2% 0;
 }
