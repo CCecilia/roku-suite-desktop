@@ -5,10 +5,18 @@ const path = require('path');
 const fs = require('fs');
 const {app, BrowserWindow, Menu,  MenuItem, ipcMain, ipcRenderer} = require('electron');
 const async = require('async');
+
+//Rest Ingest endpoint for logging analytics requests
+const ingestor = require("./lib/services/ingestor")();
+console.log('what ' + ingestor.emitter);
+
 // controllers
 const projectController = require('./lib/controllers/projectController');
 const rokuController = require('./lib/controllers/rokuController');
 const toolController = require('./lib/controllers/toolController');
+const analyticsController = require('./lib/controllers/analyticsController')();
+console.log(analyticsController);
+
 // DB config
 const db = require('./lib/config/database')
 
@@ -110,6 +118,8 @@ app.on('ready', () => {
             icon: path.join(__dirname, 'assets', 'images', 'rokusuite_icon.ico')
         });
 
+        mainWindow.webContents.openDevTools();
+        analyticsController.init(mainWindow, ingestor);
 
         mainWindow.init_data = {
             projects: results.projects,
@@ -184,6 +194,14 @@ ipcMain.on('key_logger', (e, key_logger) => {
     } else {
         toolController.closeLoggerWindow();
     }
+});
+
+ipcMain.on('analytics_listen', e => {
+    analyticsController.listen();
+});
+
+ipcMain.on('analytics_ignore', e => {
+    analyticsController.ignore();
 });
 
 // handle updating key window from main

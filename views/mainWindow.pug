@@ -11,6 +11,7 @@ block content
                 li.sidebar-nav.clickable(data-target='tools') Tools
                 li.sidebar-nav.clickable(data-target='refs') Refs
                 li.sidebar-nav.clickable(data-target='key_logs') Key Logs
+                li.sidebar-nav.clickable(data-target='analytics') Analytics
         #main-content.col-9
             #deploy-options.row
                 .col-6#roku-select-wrap.offset-3.text-center
@@ -60,4 +61,7 @@ block content
             #refs-pane.row.hidden
                 h1.text-center.roku-font Refs
                 h4.text-muted.text-center Coming Soon
+            #analytics-pane.row.hidden
+              h4.text-center.roku-font Analytics Log Output
+              div#analytics-data-view 
             #key-logs-pane.row.hidden
